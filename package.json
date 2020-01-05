@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "A password manager for the 21st century",
   "main": "app.js",
+  "scripts": {
+    "bundle": "browserify app/client/js/app.js -o app/client/js/app.temp.js",
+    "transform": "babel app/client/js/app.temp.js -o app/client/js/dist/app.dist.js && rimraf app/client/js/app.temp.js",
+    "minify": "uglifyjs app/client/js/dist/app.dist.js -o app/client/js/dist/app.min.js",
+    "build": "npm run bundle && npm run transform && npm run minify"
+  },
   "repository": "https://github.com/Cubified/password_manager.git",
   "author": "CubeDoodl <cubedoodldev@gmail.com>",
   "license": "MIT",

@@ -1,25 +1,26 @@
 {
   "name": "passman_beta",
   "version": "1.0.0",
-  "description": "a fresh coat of paint for passman",
+  "description": "A fresh coat of paint for passman",
   "main": "app.js",
   "scripts": {
     "bundle": "browserify app.js -t babelify --outfile app.dist.js",
     "minify": "uglifyjs app.dist.js -o app.min.js && rimraf app.dist.js",
     "build": "npm run bundle && npm run minify"
   },
+  "repository": "https://github.com/Cubified/password_manager.git",
   "author": "CubeDoodl",
   "license": "MIT",
   "private": false,
   "dependencies": {
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "babelify": "^8.0.0",
-    "browserify": "^15.2.0",
-    "preact": "^8.2.7",
-    "rimraf": "^2.6.2",
-    "uglify-js": "^3.3.9"
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
+    "react": "^16.12.0",
+    "rimraf": "^3.0.0",
+    "uglifyjs": "^2.4.11"
   }
 }
