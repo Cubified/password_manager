@@ -1,27 +1,23 @@
 {
-  "name": "login-system",
+  "name": "password_manager",
   "version": "1.0.0",
-  "description": "password manager for the 21st century (or something like that)",
+  "description": "A password manager for the 21st century",
   "main": "app.js",
-  "scripts": {
-    "bundle": "browserify app/client/js/app.js -o app/client/js/app.temp.js",
-    "transform": "babel app/client/js/app.temp.js -o app/client/js/dist/app.dist.js && rimraf app/client/js/app.temp.js",
-    "minify": "uglifyjs app/client/js/dist/app.dist.js -o app/client/js/dist/app.min.js",
-    "build": "npm run bundle && npm run transform && npm run minify"
-  },
-  "author": "CubeDoodl",
+  "repository": "https://github.com/Cubified/password_manager.git",
+  "author": "CubeDoodl <cubedoodldev@gmail.com>",
   "license": "MIT",
+  "private": false,
   "dependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "browserify": "^14.4.0",
+    "babel-preset-env": "^1.7.0",
+    "browserify": "^16.5.0",
     "client-sessions": "^0.8.0",
     "crypto-js": "^3.1.9-1",
     "csprng": "^0.1.2",
-    "express": "^4.15.4",
-    "pouchdb": "^6.3.4",
-    "pug": "^2.0.0-rc.3",
-    "rimraf": "^2.6.1",
-    "uglify-js": "^3.0.28"
+    "express": "^4.17.1",
+    "pouchdb": "^7.1.1",
+    "pug": "^2.0.4",
+    "rimraf": "^3.0.0",
+    "uglify-js": "^3.7.3"
   }
 }

@@ -1,8 +1,18 @@
 # password_manager
 
-A password manager for the 21st century.
+A password manager for the 21st century.  Built with Pug, Bulma, PouchDB, and Node for personal, everyday use.
+
+## Features
+
+- Responsive UI
+- Two included layouts
+- Folders
+- Random oassword generator
+- Rudimentary settings page
 
 I have been using this almost daily for two years, that being said I can't necessarily advise that it be hosted publicly as, while I have done my best to ensure security, I'm not a cryptographer and have done this mainly for fun and learning.
+
+While this app works well for the most basic of usecases (i.e. storing and retrieving passwords), it lacks much beyond this -- it remains in somewhat of an eternal WIP state as a result
 
 ## Screenshots
 
