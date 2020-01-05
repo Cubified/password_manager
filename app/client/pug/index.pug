@@ -1,0 +1,104 @@
+doctype html
+html
+	head
+		title passman
+		meta(name='viewport' content='width=device-width, initial-scale=1')
+		link(rel='stylesheet' href='https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css')
+		link(rel='stylesheet' href='/css/bulma.css')
+	body
+		section(class='hero is-fullheight is-warning is-bold')
+			div(class='hero-body')
+				div(class='container has-text-centered')
+					h1(class='title') passman
+					h2(class='subtitle') password manager for the 21st century (or something like that)
+						br
+						br
+						a(class='button is-dark is-outlined' href='#loginAnchor') Login
+						| &nbsp;
+						a(class='button is-dark is-outlined' href='#signupAnchor') Sign Up
+						br
+						br
+						a(href='#features')
+							span
+								i(class='fa fa-angle-down')
+							| &nbsp;
+							span see features
+		section(id='features' class='hero is-halfheight is-info')
+			div(class='hero-body')
+				div(class='container')
+					h1(class='title has-text-centered') why passman?
+					div(class='columns is-fullheight is-primary')
+						div(class='column')
+							h2(class='subtitle has-text-centered') Next generation
+							span.
+								passman is written with speed in mind, while also not compromising on security
+						div(class='column')
+							h2(class='subtitle has-text-centered') Secure
+							span.
+								passman utilizes AES-256 bit encryption to ensure that you are the only person able to view or edit your passwords
+						div(class='column')
+							h2(class='subtitle has-text-centered') Unlimited
+							span.
+								store as many passwords as you want - passman will never impose limits on you
+						div(class='column')
+							h2(class='subtitle has-text-centered') Take it anywhere
+							span.
+								as long as you have internet, you have passman
+		section(class='hero is-halfheight is-danger')
+			div(class='hero-body')
+				div(class='container')
+					h1(class='title has-text-centered') see passman in action
+					span todo
+		section(class='hero is-halfheight is-light' id='loginAnchor')
+			div(class='hero-body')
+				div(class='container')
+					form(action='/login' method='POST')
+						h1(class='title' style='color:#363636') Login
+						article(class='message is-danger is-hidden')
+							div(class='message-header')
+								p
+									strong Error
+							div(class='message-body').
+								Incorrect username or password
+						div(class='field')
+							label(class='label') Username
+							div(class='control has-icons-left')
+								input(class='input' type='text' placeholder='Username' name='username')
+								span(class='icon is-small is-left')
+									i(class='fa fa-user')
+						div(class='field')
+							label(class='label') Password
+							div(class='control has-icons-left')
+								input(class='input' type='password' placeholder='Password' name='password')
+								span(class='icon is-small is-left')
+									i(class='fa fa-lock')
+						button(type='submit' class='button is-info') Submit
+		section(class='hero is-halfheight is-light' id='signupAnchor')
+			div(class='hero-body')
+				div(class='container')
+					form(action='/signup' method='POST')
+						h1(class='title') Sign Up
+						div(class='field')
+							label(class='label') Username
+							div(class='control has-icons-left')
+								input(class='input' type='text' placeholder='Username' name='username')
+								span(class='icon is-small is-left')
+									i(class='fa fa-user')
+							p(id='username-error' class='help is-danger')
+						div(class='field')
+							label(class='label') Password
+							div(class='control has-icons-left')
+								input(class='input' type='password' placeholder='Password' name='password')
+								span(class='icon is-small is-left')
+									i(class='fa fa-lock')
+							p(id='password-error' class='help is-danger')
+						div(class='field')
+							label(class='label') Confirm Password
+							div(class='control has-icons-left')
+								input(class='input' type='password' placeholder='Confirm Password' name='confirm_password')
+								span(class='icon is-small is-left')
+									i(class='fa fa-lock')
+							p(id='confirm_password-error' class='help is-danger')
+						button(type='submit' class='button is-info') Submit
+		script(src='/js/login.min.js')
+		script(src='/js/signup.min.js')

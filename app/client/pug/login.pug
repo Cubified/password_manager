@@ -1,0 +1,36 @@
+doctype html
+html
+	head
+		title Login
+		meta(name='viewport' content='width=device-width, initial-scale=1')
+		link(rel='stylesheet' href='https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css')
+		link(rel='stylesheet' href='/css/bulma.css')
+	body
+		section(class='hero is-fullheight is-light')
+			div(class='hero-body')
+				div(class='container')
+					form(action='/login' method='POST')
+						h1(class='title') Login
+						article(class='message is-danger is-hidden')
+							div(class='message-header')
+								p
+									strong Error
+							div(class='message-body').
+								Incorrect username or password
+						div(class='field')
+							label(class='label') Username
+							div(class='control has-icons-left')
+								input(class='input' type='text' placeholder='Username' name='username')
+								span(class='icon is-small is-left')
+									i(class='fa fa-user')
+						div(class='field')
+							label(class='label') Password
+							div(class='control has-icons-left')
+								input(class='input' type='password' placeholder='Password' name='password')
+								span(class='icon is-small is-left')
+									i(class='fa fa-lock')
+						button(type='submit' class='button is-info is-outlined') Submit
+						br
+						br
+						a(href='/signup') Don't have an account? Sign up.
+		script(src='/js/login.min.js')

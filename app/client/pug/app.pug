@@ -1,0 +1,121 @@
+doctype html
+html
+	head
+		title passman
+		meta(name='viewport' content='width=device-width, initial-scale=1')
+		link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+		link(rel='stylesheet' href='/css/bulma.css')
+		style.
+			.navbar,.navbar-brand{
+				background:#ffdd57;
+			}
+			.navbar-burger.is-active > span{
+				background:#333333;
+			}
+			a.navbar-item:hover,.navbar-burger:hover{
+				background:#eecc47;
+			}
+			li{
+				cursor:pointer;
+			}
+			.wide{
+				width:100%;
+			}
+			.card{
+				float:left;
+				margin:5px;
+			}
+			h4.is-foldername{
+				margin-top:10px;
+				text-align:center;
+			}
+			.card{
+				cursor:pointer;
+			}
+			.sticky{
+				position:sticky;
+				top:20px;
+			}
+	body
+		nav(class='navbar')
+			div(class='navbar-brand')
+				a(class='navbar-item' href='/')
+					strong
+						h2(class='subtitle') passman
+				div(class='navbar-burger')
+					span
+					span
+					span
+			div(class='navbar-end')
+				div(class='navbar-menu')
+					a(class='navbar-item is-info' href='/settings')
+						h1(class='subtitle') Account Settings
+					a(class='navbar-item is-danger' href='/logout')
+						h1(class='subtitle') Logout
+		br
+		div(class='columns')
+			div(class='column content')
+				div(class='columns')
+					div(class='column is-9')
+						input(class='input is-fullwidth' placeholder='Search...' id='searchbar')
+					div(class='column wide')
+						div(class='dropdown wide layout-container')
+							div(class='dropdown-trigger wide')
+								button(class='button is-primary is-outlined wide' id='changeLayout')
+									span Layout
+									span(class='icon is-small')
+										i(class='fa fa-angle-down')
+							div(class='dropdown-menu wide')
+								div(class='dropdown-content')
+									a(class='dropdown-item is-layout' data-layout='default') Default
+									a(class='dropdown-item is-layout' data-layout='card') Card
+				aside(class='menu' id='websites')
+			div(class='column')
+				div(class='sticky')
+					div(class='field')
+						label(class='label') Website
+						div(class='control')
+							input(class='input' type='text' placeholder='Website' id='websiteName')
+					div(class='field')
+						label(class='label') Username
+						div(class='control')
+							input(class='input' type='text' placeholder='Username' id='websiteUsername')
+					div(class='field')
+						label(class='label') Password
+						div(class='control')
+							input(class='input' type='text' placeholder='Password' id='websitePassword')
+							button(class='button is-fullwidth is-warning' id='generatePassword') Generate
+					div(class='field')
+						label(class='label') Additional Info
+						div(class='control')
+							textarea(class='textarea' placeholder='Additional Info' id='websiteInfo')
+					div(class='columns')
+						div(class='column')
+							button(class='button is-info is-outlined is-fullwidth' id='updateSite' disabled) Update
+						div(class='column')
+							button(class='button is-danger is-outlined is-fullwidth' id='deleteSite' disabled) Delete
+					div(class='columns')
+						div(class='column')
+							button(class='button is-info is-outlined is-fullwidth' id='addNew') Add New
+						div(class='column')
+							div(class='dropdown wide')
+								div(class='dropdown-trigger wide')
+									button(class='button wide is-primary is-outlined' id='openDropdown')
+										span Main Folder
+										span(class='icon is-small')
+											i(class='fa fa-angle-down')
+								div(class='dropdown-menu wide' role='menu')
+									div(class='dropdown-content' id='foldersContainer')
+					hr
+					div(class='field')
+						label(class='label') Folder Name
+						div(class='control')
+							input(class='input' type='text' placeholder='Folder Name' id='folderName')
+							p(class='help is-danger is-hidden' id='folderError') A folder with this name already exists.
+					div(class='columns')
+						div(class='column')
+							button(class='button is-info is-outlined is-fullwidth' id='createFolder') Create Folder
+						div(class='column')
+							button(class='button is-danger is-outlined is-fullwidth' id='deleteFolder') Delete Folder
+		span(id='enc' class='is-hidden') #{websites}
+		script(src='/js/app.min.js')
