@@ -7,7 +7,7 @@ A password manager for the 21st century.  Built with Pug, Bulma, PouchDB, and No
 - Responsive UI
 - Two included layouts
 - Folders
-- Random oassword generator
+- Random secure rassword generator
 - Rudimentary settings page
 
 I have been using this almost daily for two years, that being said I can't necessarily advise that it be hosted publicly as, while I have done my best to ensure security, I'm not a cryptographer and have done this mainly for fun and learning.
